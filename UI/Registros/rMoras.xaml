@@ -5,48 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroPrestamos.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro de Moras" Height="550" Width="600" WindowStartupLocation="CenterScreen">
+        Title="Registro de Moras" Height="530" Width="530" WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" Margin="15">
             <!--MORA ID-->
-            <Label Content="Mora Id" FontWeight="Bold" FontSize="16" />
+            <Label Content="Mora Id" FontWeight="Bold"/>
             <StackPanel Orientation="Horizontal" >
-                <TextBox x:Name="MoraIdTextbox" Text="{Binding MoraId}"  FontSize="16" VerticalContentAlignment="Center" Width="260" Background="#19000000"/>
-
+                <TextBox x:Name="MoraIdTextbox" Text="{Binding MoraId}" VerticalContentAlignment="Center" Width="260"/>
                 <!--BUSCAR-->
-                <Button x:Name="BuscarButton" Click="BuscarButton_Click" Margin="75,0,0,0" Width="120">
+                <Button x:Name="BuscarButton" Click="BuscarButton_Click" Margin="100,0,0,0" Width="100">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="25" Source="/Resources/buscar.png" />
-                        <Label Content="Buscar" FontSize="15" FontWeight="Bold"/>
+                        <Label Content="Buscar" FontWeight="Bold"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
 
             <!--FECHA-->
-            <Label Content="Fecha Mora" FontWeight="Bold" FontSize="13"/>
-            <DatePicker x:Name="FechaMoraDatePicker" SelectedDate="{Binding FechaMora}" FontSize="13" SelectedDateFormat="Short" VerticalContentAlignment="Center"/>
+            <Label Content="Fecha Mora" FontWeight="Bold" Margin="0,10,0,0"/>
+            <DatePicker x:Name="FechaMoraDatePicker" SelectedDate="{Binding FechaMora}" Height="30" SelectedDateFormat="Short" VerticalContentAlignment="Center" Margin="0,0,0,10"/>
 
             <!--DETALLE-->
             <StackPanel Orientation="Vertical">
                 <GroupBox Header="Detalle Moras" Margin="0,5,0,0">
                     <StackPanel>
-
                         <Label Content="Prestamo Id"/>
-                        <ComboBox x:Name="PrestamoIdDetalleComboBox" Text="{Binding Detalle.PrestamoId}" Height="20"/>
+                        <ComboBox x:Name="PrestamoIdDetalleComboBox" Text="{Binding Detalle.PrestamoId}" Width="100" HorizontalAlignment="Left"/>
 
                         <Label Content="Valor"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="ValorTextBox" Text="{Binding Detalle.Valor}" Width="300"/>
-                            <Button x:Name="AgregarFilaButton" Margin="20,0,0,0" Click="AgregarFilaButton_Click">
+                            <TextBox x:Name="ValorTextBox" Text="{Binding Detalle.Valor}" Width="250"/>
+                            <Button x:Name="AgregarFilaButton" Margin="40,0,0,0" Click="AgregarFilaButton_Click" FontWeight="Bold" >
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/Resources/mas.png" Height="25"/>
-                                    <Label Content="Agregar fila"/>
+                                    <Label Content="Agregar fila" />
                                 </StackPanel>
                             </Button>
-                            <Button x:Name="RemoverFilaButton" Margin="20,0,0,0" Click="RemoverFilaButton_Click">
+                            <Button x:Name="RemoverFilaButton" Margin="30,0,0,0" Click="RemoverFilaButton_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/Resources/men.png" Height="25"/>
-                                    <Label Content="Eliminar fila"/>
+                                    <Label Content="Eliminar fila" FontWeight="Bold"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
@@ -62,20 +60,20 @@
                         </DataGrid>
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0" >
-                            <Label Content="Total"/>
-                            <TextBox x:Name="TotalMorasTextBox" Width="100" IsReadOnly="True"/>
+                            <Label Content="Total" FontWeight="Bold" />
+                            <TextBox x:Name="TotalMorasTextBox" Width="100" IsReadOnly="True" Height="30"/>
                         </StackPanel>
                     </StackPanel>
                 </GroupBox>
             </StackPanel>
 
             <!--TOTAL-->
-            <StackPanel Orientation= "Horizontal" Height="25" Margin="0,4,0,0" HorizontalAlignment="Left">
+            <StackPanel Orientation= "Horizontal" Margin="0,5,0,0" HorizontalAlignment="Left">
 
             </StackPanel>
 
             <!--NUEVO-->
-            <StackPanel Orientation="Horizontal" Height="35" Margin="0,5,0,0" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0" >
                 <Button x:Name="NuevoButton" Width="130" Click="NuevoButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="25" Source="/Resources/nuevo.png"/>
@@ -85,7 +83,7 @@
 
 
                 <!--GUARDARr-->
-                <Button x:Name="GuardarButton" Margin="30,0,0,0" Width="130" Click="GuardarButton_Click">
+                <Button x:Name="GuardarButton" Margin="40,0,0,0" Width="130" Click="GuardarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/guardar.png"/>
                         <Label Content="Guardar" FontSize="17" FontWeight="Bold"/>
@@ -93,7 +91,7 @@
                 </Button>
 
                 <!--ELIMINAR-->
-                <Button x:Name="EliminarButton" Margin="30,0,0,0" Width="130" Click="EliminarButton_Click">
+                <Button x:Name="EliminarButton" Margin="40,0,0,0" Width="130" Click="EliminarButton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Height="30" Source="/Resources/Eliminar.png"/>
                         <Label Content="Eliminar" FontSize="17" FontWeight="Bold"/>

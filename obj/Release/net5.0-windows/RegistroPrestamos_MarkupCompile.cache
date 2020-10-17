@@ -1,18 +1,18 @@
 ﻿RegistroPrestamos
-1.0.0.0
+
 
 winexe
 C#
 .cs
-C:\Users\User\source\repos\RegistroPrestamos\obj\Debug\net5.0-windows\
+C:\Users\User\source\repos\RegistroPrestamos\obj\Release\net5.0-windows\
 RegistroPrestamos
 none
 false
-TRACE;DEBUG;NET;NET5_0
+TRACE;RELEASE;NET;NET5_0
 C:\Users\User\source\repos\RegistroPrestamos\App.xaml
 6-455660624
 
-24992674106
+191059710659
 2191406044618
 MainWindow.xaml;UI\Consultas\cPersonas.xaml;UI\Consultas\cPrestamos.xaml;UI\Registros\rMoras.xaml;UI\Registros\rPersonas.xaml;UI\Registros\rPrestamos.xaml;
 

@@ -69,3 +69,4 @@ C:\Users\User\source\repos\RegistroPrestamos\obj\Debug\net5.0-windows\RegistroPr
 C:\Users\User\source\repos\RegistroPrestamos\obj\Debug\net5.0-windows\ref\RegistroPrestamos.dll
 C:\Users\User\source\repos\RegistroPrestamos\obj\Debug\net5.0-windows\RegistroPrestamos.pdb
 C:\Users\User\source\repos\RegistroPrestamos\obj\Debug\net5.0-windows\RegistroPrestamos.genruntimeconfig.cache
+C:\Users\User\source\repos\RegistroPrestamos\obj\Debug\net5.0-windows\RegistroPrestamos.csprojAssemblyReference.cache
