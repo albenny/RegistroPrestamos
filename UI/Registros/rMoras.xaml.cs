@@ -36,7 +36,7 @@ namespace RegistroPrestamos.UI.Registros
         private bool Validar()
         {
             bool Validado = true;
-            if (ValorTextBox.Text.Length == 0)
+            if (MoraIdTextbox.Text.Length == 0)
             {
                 Validado = false;
                 MessageBox.Show("Transaccion Errada", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -45,7 +45,7 @@ namespace RegistroPrestamos.UI.Registros
 
         }
 
-       //BUSCAR
+        //BUSCAR
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
             Moras encontrado = MorasBLL.Buscar(moras.MoraId);
@@ -65,9 +65,18 @@ namespace RegistroPrestamos.UI.Registros
         //AGREGAR FILA
         private void AgregarFilaButton_Click(object sender, RoutedEventArgs e)
         {
-            moras.Detalle.Add(new MorasDetalle(moras.MoraId, Convert.ToInt32(PrestamoIdDetalleComboBox), FechaMoraDatePicker.DisplayDate, Convert.ToSingle(ValorTextBox.Text)));
+            var filaDetalle = new MorasDetalle
+            {
+                MoraId = this.moras.MoraId,
+                PrestamoId = Convert.ToInt32(PrestamoIdDetalleComboBox.SelectedValue),
+                Valor = Convert.ToSingle(ValorTextBox.Text)
 
+            };
+            moras.Total += Convert.ToDouble(ValorTextBox.Text.ToString());
+
+            this.moras.Detalle.Add(filaDetalle);
             Cargar();
+
 
             ValorTextBox.Clear();
         }
@@ -75,12 +84,21 @@ namespace RegistroPrestamos.UI.Registros
         //REMOVER FILA
         private void RemoverFilaButton_Click(object sender, RoutedEventArgs e)
         {
-            if (DetalleDataGrid.Items.Count >= 1 && DetalleDataGrid.SelectedIndex <= DetalleDataGrid.Items.Count - 1)
+            try
             {
-                moras.Detalle.RemoveAt(DetalleDataGrid.SelectedIndex);
-                Cargar();
+                if (DetalleDataGrid.Items.Count >= 1 && DetalleDataGrid.SelectedIndex <= DetalleDataGrid.Items.Count - 1)
+                {
+                    moras.Detalle.RemoveAt(DetalleDataGrid.SelectedIndex);
+                    moras.Total -= Convert.ToDouble(TotalMorasTextBox.Text);
+                    Cargar();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No has seleccionado ninguna Fila\n\nSeleccione la Fila a Remover.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
         //NUEVO
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {

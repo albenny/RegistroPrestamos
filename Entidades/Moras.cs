@@ -13,13 +13,6 @@ namespace RegistroPrestamos.Entidades
         public DateTime Fecha { get; set; } = DateTime.Now;
         public double Total { get; set; }
 
-        public Moras()
-        {
-            MoraId = 0;
-            Fecha = DateTime.Now;
-            Total = 0;
-        }
-
         [ForeignKey("MoraId")]
         public virtual List<MorasDetalle> Detalle { get; set; } = new List<MorasDetalle>();
     }

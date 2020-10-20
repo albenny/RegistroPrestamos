@@ -8,10 +8,13 @@ using System.Windows;
 
 namespace RegistroPrestamos
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show($"Ha ocurrido una exepcion:\n\n {e.Exception.Message}");
+            e.Handled = true;
+        }
     }
 }
+

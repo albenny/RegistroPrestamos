@@ -39,9 +39,6 @@ namespace RegistroPrestamos.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("FechaD")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("MoraId")
                         .HasColumnType("INTEGER");
 

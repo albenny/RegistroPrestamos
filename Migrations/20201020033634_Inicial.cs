@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RegistroPrestamos.Migrations
 {
-    public partial class MigracionInicial : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -62,7 +62,6 @@ namespace RegistroPrestamos.Migrations
                     MoraId = table.Column<int>(nullable: false),
                     PrestamoId = table.Column<int>(nullable: false),
                     Valor = table.Column<double>(nullable: false),
-                    FechaD = table.Column<DateTime>(nullable: false),
                     PersonaId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>

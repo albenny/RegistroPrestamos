@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroPrestamos.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro de Moras" Height="530" Width="530" WindowStartupLocation="CenterScreen">
+        Title="Registro de Moras" Height="550" Width="530" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="15">
             <!--MORA ID-->
@@ -23,7 +23,7 @@
 
             <!--FECHA-->
             <Label Content="Fecha Mora" FontWeight="Bold" Margin="0,10,0,0"/>
-            <DatePicker x:Name="FechaMoraDatePicker" SelectedDate="{Binding FechaMora}" Height="30" SelectedDateFormat="Short" VerticalContentAlignment="Center" Margin="0,0,0,10"/>
+            <DatePicker x:Name="FechaMoraDatePicker" SelectedDate="{Binding Fecha}" Height="30" SelectedDateFormat="Short" VerticalContentAlignment="Center" Margin="0,0,0,10"/>
 
             <!--DETALLE-->
             <StackPanel Orientation="Vertical">
@@ -32,36 +32,39 @@
                         <Label Content="Prestamo Id"/>
                         <ComboBox x:Name="PrestamoIdDetalleComboBox" Text="{Binding Detalle.PrestamoId}" Width="100" HorizontalAlignment="Left"/>
 
-                        <Label Content="Valor"/>
+
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="ValorTextBox" Text="{Binding Detalle.Valor}" Width="150"/>
-                            <Button x:Name="AgregarFilaButton" Margin="40,0,0,0" Click="AgregarFilaButton_Click" FontWeight="Bold" >
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Resources/Agregar.png" Height="20"/>
-                                    <Label Content="Agregar fila" />
-                                </StackPanel>
-                            </Button>
-                            <Button x:Name="RemoverFilaButton" Margin="30,0,0,0" Click="RemoverFilaButton_Click">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Resources/Remover.png" Height="20"/>
-                                    <Label Content="Eliminar fila" FontWeight="Bold"/>
-                                </StackPanel>
-                            </Button>
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="Valor"/>
+                                <TextBox x:Name="ValorTextBox" Text="{Binding Detalle.Valor}" Width="150" Height="30" VerticalAlignment="Top"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" Margin="150,0,0,0" >
+                                <Button x:Name="AgregarFilaButton"  Click="AgregarFilaButton_Click" FontWeight="Bold" Width="120" >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Resources/Agregar.png" Height="20"/>
+                                        <Label Content="Agregar fila" />
+                                    </StackPanel>
+                                </Button>
+                                <Button x:Name="RemoverFilaButton" Margin="0,10,0,0" Click="RemoverFilaButton_Click" Width="120">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Resources/Remover.png" Height="20"/>
+                                        <Label Content="Eliminar fila" FontWeight="Bold"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
                         </StackPanel>
 
                         <DataGrid x:Name="DetalleDataGrid" Height="100" AutoGenerateColumns="False" ItemsSource="{Binding Detalle}" Margin="0,10,0,0">
                             <DataGrid.Columns>
-
                                 <DataGridTextColumn Header="PrestamoId" Binding="{Binding PrestamoId}"/>
-
-                                <DataGridTextColumn Header="FechaMora" Binding="{Binding FechaMoraDetalle}"/>
                                 <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
                             </DataGrid.Columns>
                         </DataGrid>
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0" >
                             <Label Content="Total" FontWeight="Bold" />
-                            <TextBox x:Name="TotalMorasTextBox" Width="100" IsReadOnly="True" Height="30"/>
+                            <TextBox x:Name="TotalMorasTextBox" Text="{Binding Total}" Width="100" IsReadOnly="True" Height="30"/>
                         </StackPanel>
                     </StackPanel>
                 </GroupBox>
