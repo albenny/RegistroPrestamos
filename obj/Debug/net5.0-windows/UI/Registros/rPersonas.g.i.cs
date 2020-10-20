@@ -117,7 +117,7 @@ namespace RegistroPrestamos.UI.Registros {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/RegistroPrestamos;V1.0.0.0;component/ui/registros/rpersonas.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/RegistroPrestamos;component/ui/registros/rpersonas.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\UI\Registros\rPersonas.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

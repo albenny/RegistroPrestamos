@@ -8,10 +8,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Remove="Resources\Agregar.png" />
 		<None Remove="Resources\Buscar.png" />
 		<None Remove="Resources\Eliminar.png" />
 		<None Remove="Resources\Guardar.png" />
 		<None Remove="Resources\Nuevo.png" />
+		<None Remove="Resources\Remover.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -23,6 +25,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<Resource Include="Resources\Agregar.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
 		<Resource Include="Resources\Buscar.png">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Resource>
@@ -34,6 +39,9 @@
 		</Resource>
 		<Resource Include="Resources\Nuevo.png">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Remover.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Resource>
 	</ItemGroup>
 

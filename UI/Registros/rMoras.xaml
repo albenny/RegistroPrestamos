@@ -34,16 +34,16 @@
 
                         <Label Content="Valor"/>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox x:Name="ValorTextBox" Text="{Binding Detalle.Valor}" Width="250"/>
+                            <TextBox x:Name="ValorTextBox" Text="{Binding Detalle.Valor}" Width="150"/>
                             <Button x:Name="AgregarFilaButton" Margin="40,0,0,0" Click="AgregarFilaButton_Click" FontWeight="Bold" >
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Resources/mas.png" Height="25"/>
+                                    <Image Source="/Resources/Agregar.png" Height="20"/>
                                     <Label Content="Agregar fila" />
                                 </StackPanel>
                             </Button>
                             <Button x:Name="RemoverFilaButton" Margin="30,0,0,0" Click="RemoverFilaButton_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Resources/men.png" Height="25"/>
+                                    <Image Source="/Resources/Remover.png" Height="20"/>
                                     <Label Content="Eliminar fila" FontWeight="Bold"/>
                                 </StackPanel>
                             </Button>
